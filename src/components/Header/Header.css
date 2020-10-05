@@ -1,0 +1,30 @@
+.navbar{
+  margin-top: 44px;
+  margin-left: 88px;
+}
+.register-btn , .admin-btn{
+  padding: 10px 30px;
+  border-radius: 6px;
+  color: #FFF;
+}
+.btn:hover{
+  color:#FFF;
+}
+.admin-btn{
+  background: #434141;
+  margin-right: 140px;
+}
+.register-btn{
+  background: #3F90FC;
+}
+.link-item{
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+}
+.link-item:hover{
+  text-decoration: none;
+  color: black;
+}

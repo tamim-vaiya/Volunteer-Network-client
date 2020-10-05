@@ -1,0 +1,22 @@
+.loginBox{
+  width: 570px;
+  height: 457px;
+  margin: 40px auto;
+
+  background: #FFFFFF;
+  border: 1px solid #ABABAB;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.googleBtn{
+  width: 461px;
+  height: 51px;
+  background: #FFFFFF;
+  border: 1px solid #C7C7C7;
+  box-sizing: border-box;
+  border-radius: 57px;
+  margin: 20px auto;
+}
+.loginArea{
+  margin-top: 154px;
+}
