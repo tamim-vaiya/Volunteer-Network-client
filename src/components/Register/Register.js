@@ -16,7 +16,7 @@ const Register = () => {
   })
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:5000/submitForm',{
+    fetch('https://still-brook-08941.herokuapp.com/submitForm',{
       method:'POST', 
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify(formDetails)

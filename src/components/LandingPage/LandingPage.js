@@ -8,7 +8,7 @@ const LandingPage = () => {
   const [event, setEvent] = useState([])
 
   useEffect( ()=> {
-    fetch('http://localhost:5000/allEvent')
+    fetch('https://still-brook-08941.herokuapp.com/allEvent')
     .then(res => res.json())
     .then(data => setEvent(data))
   }, [])

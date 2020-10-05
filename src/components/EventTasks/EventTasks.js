@@ -10,7 +10,7 @@ const EventTasks = () => {
   const [userEvents, setUserEvents] = useState([])
 
   useEffect( ()=>{
-    fetch('http://localhost:5000/getEvents',{
+    fetch('https://still-brook-08941.herokuapp.com/getEvents',{
       headers: {
         'Content-Type':'application/json',
          email: loggedInUser.email
@@ -21,7 +21,7 @@ const EventTasks = () => {
   })
 
   const handleCancelBtn= (id) => {
-    fetch('http://localhost:5000/removeEvent',{
+    fetch('https://still-brook-08941.herokuapp.com/removeEvent',{
       method: 'DELETE',
       headers:{
             'Content-Type':'application/json',

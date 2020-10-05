@@ -4,6 +4,7 @@ import AddIcon from '@material-ui/icons/Add';
 import logo from '../../logos/Group 1329.png';
 import { UserContext } from '../../App';
 import './LeftMenu.css';
+import { Link } from 'react-router-dom';
 
 const LeftMenu = () => {
   const [loggedInUser,setLoggedInUser]=useContext(UserContext)
@@ -12,7 +13,7 @@ const LeftMenu = () => {
       },[])
   return (
     <div style={{padding:'10px',height:'100vh',  paddingTop:'20px'}}>
-            <img style={{height:'50px'}} src={logo} alt=""/>
+            <Link to="/"><img style={{height:'50px'}} src={logo} alt=""/></Link>
         <button className='nav-button' autoFocus>
         <div onClick={()=>setLoggedInUser({...loggedInUser,clicked:'volunteerList'})} style={{display:'flex',cursor:'pointer', margin:'15px 0px', alignItems:'center'}}>
             <div>

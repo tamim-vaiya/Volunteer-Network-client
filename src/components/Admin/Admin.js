@@ -45,14 +45,14 @@ const Admin = () => {
     
     useEffect(()=>{
         
-            fetch('http://localhost:5000/allRegisteredEvents')
+            fetch('https://still-brook-08941.herokuapp.com/allRegisteredEvents')
             .then(res=>res.json())
             .then(result=>setAllEvents(result))
        
     },[])
 
     const deleteEvent=(id)=>{
-      fetch('http://localhost:5000/deleteEvent',{
+      fetch('https://still-brook-08941.herokuapp.com/deleteEvent',{
           method:'DELETE',
           headers:{
               'Content-Type':'application/json',
