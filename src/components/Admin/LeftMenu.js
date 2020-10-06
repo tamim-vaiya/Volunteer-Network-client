@@ -9,13 +9,13 @@ import { Link } from 'react-router-dom';
 const LeftMenu = () => {
   const [loggedInUser,setLoggedInUser]=useContext(UserContext)
      useEffect(()=>{
-      setLoggedInUser({...loggedInUser, clicked:'volunteerList'})
+      setLoggedInUser({...loggedInUser, clicked:'allVolunteers'})
       },[])
   return (
-    <div style={{padding:'10px',height:'100vh',  paddingTop:'20px'}}>
+    <div className='MenuArea'>
             <Link to="/"><img style={{height:'50px'}} src={logo} alt=""/></Link>
-        <button className='nav-button' autoFocus>
-        <div onClick={()=>setLoggedInUser({...loggedInUser,clicked:'volunteerList'})} style={{display:'flex',cursor:'pointer', margin:'15px 0px', alignItems:'center'}}>
+        <button className='menuBtn' autoFocus>
+        <div onClick={()=>setLoggedInUser({...loggedInUser,clicked:'allVolunteers'})} style={{display:'flex',cursor:'pointer', margin:'15px 0px', alignItems:'center'}}>
             <div>
                 <PeopleOutlineIcon></PeopleOutlineIcon>
             </div>
@@ -25,8 +25,8 @@ const LeftMenu = () => {
         </div>
         </button>
 
-        <button className='nav-button'>
-        <div onClick={()=>setLoggedInUser({...loggedInUser,clicked:'addEvent'})} style={{display:'flex', cursor:'pointer', }}>
+        <button className='menuBtn'>
+        <div onClick={()=>setLoggedInUser({...loggedInUser,clicked:'pushNewEvent'})} style={{display:'flex', cursor:'pointer', }}>
             <div>
                 <AddIcon></AddIcon>
             </div>

@@ -6,10 +6,10 @@ import './Data.css';
 const Data = () => {
   return (
     <div>
-      <Grid  item xs={9} style={{marginTop:'15px'}}>
+      <Grid  item xs={9} >
             <h3 style={{marginLeft:'20px', color:'#0C0C0C'}}>Add Event</h3>
             <Grid  justify='space-around' container item md={12} spacing='7'   
-                style={{ marginLeft:'20px',marginTop:'25px' , boxShadow:'0 2px 5px lightgray',borderRadius:'10px', padding:'20px'}}>
+                className='addNewEventBox'>
                 <Grid item md={6} >
                     <div>
                         <b>Event title</b><br/>

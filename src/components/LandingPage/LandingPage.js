@@ -16,7 +16,13 @@ const LandingPage = () => {
   return (
     <div className="App">
       <Header></Header>
-      <h2>I GROW BY HELPING PEOPLE IN NEED.</h2>
+      <div>
+        <h2>I GROW BY HELPING PEOPLE IN NEED.</h2>
+        <form className="form-inline my-2 my-lg-0 justify-content-center">
+        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
         
           <div className='container row' style={{marginTop:'70px'}}>
                   {

@@ -1,9 +1,16 @@
-.nav-button:focus{
-  color:#207FEE
+.menuBtn:focus{
+  color:#207FEE;
+  border:none;
+  outline:none;
 }
-.nav-button{
+.menuBtn{
   border:none;
   background:white;
   outline:none;
  
+}
+.MenuArea{
+  padding: 10px;
+  height: 100%;
+  padding-top: 20px;
 }

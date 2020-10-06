@@ -12,6 +12,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { UserContext } from '../../App';
 import Data from './Data';
 import LeftMenu from './LeftMenu';
+import './Admin.css';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -32,22 +33,16 @@ const StyledTableCell = withStyles((theme) => ({
   }))(TableRow);
   
   
-  const useStyles = makeStyles({
-    table: {
-      minWidth: 700,
-    },
-  });
 const Admin = () => {
     const [user]=useContext(UserContext)
-    const classes=useStyles();
-    const [allEvents, setAllEvents] = useState([])
+    const [allUserEvents, setAllUserEvents] = useState([])
     
     
     useEffect(()=>{
         
             fetch('https://still-brook-08941.herokuapp.com/allRegisteredEvents')
             .then(res=>res.json())
-            .then(result=>setAllEvents(result))
+            .then(result=>setAllUserEvents(result))
        
     },[])
 
@@ -61,9 +56,9 @@ const Admin = () => {
       })
       .then(res=>res.json())
       .then(result=>{
-          const existedEvents = allEvents.filter(data=>data._id !== id)
+          const existedEvents = allUserEvents.filter(data=>data._id !== id)
           if(result){
-              setAllEvents(existedEvents)
+              setAllUserEvents(existedEvents)
           }
       })
 
@@ -76,23 +71,23 @@ const Admin = () => {
             </Grid>
 
             {
-                user.clicked == 'volunteerList' &&
-                <Grid item md={9}  style={{marginLeft:'20px', marginTop:'10px'}}>
-                <h3 style={{textAlign:'left', marginLeft:'10px', color:'#0C0C0C'}}>Volunteer register list</h3>
-                <TableContainer component={Paper} style={{marginTop:'30px',boxShadow:'0 2px 5px lightgray', padding:'30px', borderRadius:'10px'}}>
-                <Table className={classes.table} aria-label="customized table" >
+                user.clicked === 'allVolunteers' &&
+                <Grid item md={9}  className='rightGrid'>
+                <h3 id='admin-header'>Volunteer register list</h3>
+                <TableContainer component={Paper} className='paper'>
+                <Table aria-label="customized table" >
                     <TableHead>
                     <TableRow>
                         <StyledTableCell align="left">Name</StyledTableCell>
-                        <StyledTableCell align="left">Email Id</StyledTableCell>
-                        <StyledTableCell align="left">Registation Date</StyledTableCell>
+                        <StyledTableCell align="left">Email ID</StyledTableCell>
+                        <StyledTableCell align="left">Registration Date</StyledTableCell>
                         <StyledTableCell align="left">Volunteer list</StyledTableCell>
                         <StyledTableCell align="left">Action</StyledTableCell>
                         
                     </TableRow>
                     </TableHead>
                     <TableBody>
-                    {allEvents.map((event)=>{
+                    {allUserEvents.map((event)=>{
                         return(
                             <StyledTableRow key={event._id}>
                         <StyledTableCell component="th" scope="row">
@@ -116,7 +111,7 @@ const Admin = () => {
             </Grid>
             }
             {
-                user.clicked == 'addEvent' &&
+                user.clicked === 'pushNewEvent' &&
                 <Data></Data>
             }
         </Grid>
